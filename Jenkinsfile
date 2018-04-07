@@ -10,12 +10,12 @@ pipeline {
          pollSCM('* * * * *')
      }
 
-stages {
-        stage('Build'){
-            steps {
+    stages {
+         stage('Build'){
+             steps {
                 sh 'mvn clean package'
             }
-            post {
+             post {
                 success {
                     echo 'Now Archiving...'
                     archiveArtifacts artifacts: '**/target/*.war'
@@ -23,8 +23,8 @@ stages {
             }
         }
 
-        stage ('Deployments'){
-            parallel{
+         stage ('Deployments'){
+             parallel{
                 stage ('Deploy to Staging'){
                     steps {
                         sh "scp -i /Users/Nanda Gopal/tomcat-test.pem **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
