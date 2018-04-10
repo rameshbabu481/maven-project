@@ -3,8 +3,8 @@ pipeline {
 	
 	
     parameters {
-         string(name: 'tomcat_dev', defaultValue: '18.216.73.34', description: 'Staging Server')
-		 string(name: 'tomcat_prod', defaultValue: '13.59.183.247', description: 'Production Server')
+         string(name: 'tomcat_dev', defaultValue: '18.220.32.129', description: 'Staging Server')
+		 string(name: 'tomcat_prod', defaultValue: '18.217.29.218', description: 'Production Server')
     }
 
     triggers {
@@ -14,7 +14,7 @@ pipeline {
     stages {
          stage('Build'){
              steps {
-                sh 'mvn clean package'
+                sh '/usr/local/maven/current/mvn clean package'
             }
              post {
                 success {
