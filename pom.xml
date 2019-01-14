@@ -5,11 +5,11 @@
 
   <groupId>com.exampl.maven-project</groupId>
   <artifactId>maven-project</artifactId>
-  <packaging>pom</packaging>
+  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>Maven Project</name>
   <description>Sample Maven project with a working, deployable site.</description>
-  <url>http://www.example.com</url>
+  <url>http://github.com/rameshbabu481/maven-project</url>
 
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
